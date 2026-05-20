@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Privacy Policy — Marks</title>
+    <meta name="description" content="Marks does not collect, store, or transmit any personal data to remote servers. Everything stays on your device." />
+    <meta name="robots" content="index,follow" />
+    <link rel="canonical" href="https://marks.centralbraintrust.com/privacy" />
+    <style>
+      :root {
+        --bg: #0a0c12;
+        --fg: #f8fafc;
+        --muted: #94a3b8;
+        --accent: #34d399;
+        --link: #93c5fd;
+        --card: rgba(255,255,255,0.04);
+        --border: rgba(255,255,255,0.08);
+        --code: rgba(52,211,153,0.15);
+      }
+      @media (prefers-color-scheme: light) {
+        :root {
+          --bg: #f8fafc;
+          --fg: #0f172a;
+          --muted: #475569;
+          --accent: #047857;
+          --link: #2563eb;
+          --card: rgba(255,255,255,0.7);
+          --border: rgba(0,0,0,0.08);
+          --code: rgba(4,120,87,0.12);
+        }
+      }
+      * { box-sizing: border-box; }
+      html, body { margin: 0; padding: 0; background: var(--bg); color: var(--fg);
+        font-family: -apple-system, "SF Pro Text", "Inter", system-ui, sans-serif;
+        line-height: 1.6; }
+      body {
+        background-image:
+          radial-gradient(at 0% 0%, rgba(91,157,255,0.18) 0px, transparent 50%),
+          radial-gradient(at 100% 0%, rgba(168,85,247,0.15) 0px, transparent 50%),
+          radial-gradient(at 50% 100%, rgba(236,72,153,0.12) 0px, transparent 50%);
+        background-attachment: fixed;
+        min-height: 100vh;
+      }
+      .container { max-width: 720px; margin: 0 auto; padding: 48px 24px; }
+      header { display: flex; justify-content: space-between; align-items: center;
+        margin-bottom: 56px; }
+      .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--fg); }
+      .brand-logo {
+        width: 36px; height: 36px; border-radius: 10px;
+        background: linear-gradient(135deg, #5b9dff 0%, #a855f7 50%, #ec4899 100%);
+        display: flex; align-items: center; justify-content: center;
+        box-shadow: 0 4px 12px rgba(168,85,247,0.3);
+      }
+      .brand-logo svg { width: 18px; height: 18px; fill: #fff; }
+      .brand-name { font-weight: 800; font-size: 17px; letter-spacing: -0.3px; }
+      .back { color: var(--muted); text-decoration: none; font-size: 13px; }
+      .back:hover { color: var(--fg); }
+
+      .badge {
+        display: inline-flex; align-items: center; gap: 6px;
+        padding: 6px 12px;
+        background: var(--code);
+        color: var(--accent);
+        border-radius: 999px;
+        font-size: 11px; font-weight: 700;
+        text-transform: uppercase; letter-spacing: 1.2px;
+        margin-bottom: 18px;
+      }
+      h1 { font-size: clamp(28px, 5vw, 42px); line-height: 1.15;
+        margin: 0 0 8px; letter-spacing: -1.2px; font-weight: 800; }
+      .updated { color: var(--muted); font-size: 13px; margin-bottom: 40px; }
+
+      h2 { font-size: 19px; font-weight: 700; margin: 36px 0 12px;
+        letter-spacing: -0.3px; }
+      p { font-size: 15px; color: var(--fg); }
+      p, li { opacity: 0.85; }
+      ul { padding-left: 22px; }
+      li { margin-bottom: 6px; font-size: 15px; }
+      strong { color: var(--fg); opacity: 1; }
+      code { background: var(--code); color: var(--accent);
+        padding: 1px 6px; border-radius: 4px; font-size: 13px;
+        font-family: ui-monospace, "SF Mono", Menlo, monospace; }
+      a { color: var(--link); }
+
+      footer {
+        margin-top: 64px;
+        padding-top: 24px;
+        border-top: 1px solid var(--border);
+        text-align: center;
+        color: var(--muted);
+        font-size: 12px;
+      }
+      footer a { color: var(--muted); text-decoration: underline; text-underline-offset: 2px; }
+      footer a:hover { color: var(--fg); }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <a class="brand" href="https://marks.centralbraintrust.com">
+          <span class="brand-logo">
+            <svg viewBox="0 0 24 24"><path d="M6 4h12c1.1 0 2 .9 2 2v14l-8-4-8 4V6c0-1.1.9-2 2-2z"/></svg>
+          </span>
+          <span class="brand-name">Marks</span>
+        </a>
+        <a class="back" href="https://marks.centralbraintrust.com">← Back home</a>
+      </header>
+
+      <main>
+        <div class="badge">✓ Privacy Policy</div>
+        <h1>We never collect your data.</h1>
+        <p class="updated">Last updated: 20 May 2026</p>
+
+        <p>
+          Marks (the "Extension") is a Chrome browser extension that replaces the
+          default new-tab page with a personal bookmarks dashboard. This Privacy
+          Policy describes — in plain English — what data the Extension touches,
+          where it lives, and who can see it.
+        </p>
+
+        <h2>1. Summary</h2>
+        <ul>
+          <li>The Extension does <strong>not</strong> contact any remote server.</li>
+          <li>The Extension does <strong>not</strong> collect analytics, telemetry, crash reports, or any usage data.</li>
+          <li>All bookmarks, workspaces, collections and tags you create are stored locally on your device in <code>chrome.storage.local</code>.</li>
+          <li>No third parties receive any of your information through the Extension.</li>
+          <li>There are no accounts, no sign-up, no login.</li>
+        </ul>
+
+        <h2>2. What data the Extension handles</h2>
+        <p>
+          The Extension lets you save and organize the URLs, page titles, descriptions
+          and tags you choose. This data is created and read entirely on your device.
+          Specifically:
+        </p>
+        <ul>
+          <li><strong>URLs and titles</strong> you save (manually or via the toolbar popup, context menu or keyboard shortcut).</li>
+          <li><strong>Tags, descriptions, collections and workspace names</strong> you create.</li>
+          <li><strong>UI preferences</strong> (selected theme, active workspace).</li>
+        </ul>
+        <p>
+          When you click the Import button to import your existing Chrome bookmarks,
+          the Extension calls <code>chrome.bookmarks.getTree()</code> once to read the
+          list of bookmarks already stored by Chrome. The Extension never modifies
+          Chrome's native bookmarks. The read happens entirely on your device and the
+          data is then written to the Extension's own local storage.
+        </p>
+
+        <h2>3. Where the data is stored</h2>
+        <p>
+          Exclusively on your device, inside the browser profile, via the standard
+          Chrome Extension storage API (<code>chrome.storage.local</code>).
+          Uninstalling the Extension wipes that data automatically.
+        </p>
+
+        <h2>4. Permissions</h2>
+        <p>
+          Chrome shows the user a list of permissions on install. Here is exactly
+          why each one is requested:
+        </p>
+        <ul>
+          <li><strong><code>storage</code></strong> — Used to persist the user's bookmarks, workspaces, collections, tags and UI preferences between browser sessions.</li>
+          <li><strong><code>bookmarks</code></strong> — Used only when the user clicks the Import button, to read existing Chrome bookmarks via <code>chrome.bookmarks.getTree()</code>. The Extension never writes to or modifies the native Chrome bookmarks.</li>
+          <li><strong><code>contextMenus</code></strong> — Used to register the right-click "Save to Marks" item on pages and links.</li>
+          <li><strong><code>activeTab</code></strong> — Used by the toolbar popup to read the URL, title and favicon of the tab the user is currently on, so the popup can pre-fill the bookmark form. No other tab is ever accessed.</li>
+        </ul>
+
+        <h2>5. Third parties</h2>
+        <p>
+          None. The Extension contacts no remote endpoints, embeds no analytics or
+          advertising libraries, and ships no remote code. Page favicons displayed in
+          the dashboard are loaded from Google's public favicon service
+          (<code>www.google.com/s2/favicons</code>) using only the host name of each
+          saved bookmark — same behavior that Chrome itself uses to render favicons.
+        </p>
+
+        <h2>6. Children's privacy</h2>
+        <p>
+          The Extension is a general-purpose productivity tool. It is not directed at
+          children under 13. We do not knowingly collect personal information from
+          anyone — including children.
+        </p>
+
+        <h2>7. Changes to this policy</h2>
+        <p>
+          If we ever change how Marks handles data, this page will be updated and a
+          new version of the Extension will be published in the Chrome Web Store with
+          a clear changelog entry. Material changes will be flagged in the Extension
+          on first launch.
+        </p>
+
+        <h2>8. Contact</h2>
+        <p>
+          Marks is created exclusively for and offered by
+          <a href="https://www.centralbraintrust.com">Central Brain Trust</a>.
+          Privacy or security questions:
+          <a href="mailto:privacy@centralbraintrust.com">privacy@centralbraintrust.com</a>.
+        </p>
+      </main>
+
+      <footer>
+        <a href="https://www.centralbraintrust.com" target="_blank" rel="noreferrer">
+          Created exclusively for and offered by Central Brain Trust ↗
+        </a>
+      </footer>
+    </div>
+  </body>
+</html>
