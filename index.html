@@ -140,11 +140,10 @@
           <li><strong>UI preferences</strong> (selected theme, active workspace).</li>
         </ul>
         <p>
-          When you click the Import button to import your existing Chrome bookmarks,
-          the Extension calls <code>chrome.bookmarks.getTree()</code> once to read the
-          list of bookmarks already stored by Chrome. The Extension never modifies
-          Chrome's native bookmarks. The read happens entirely on your device and the
-          data is then written to the Extension's own local storage.
+          To bring in bookmarks you already have, export them from any browser as an
+          HTML file and drop that file into the Extension. The file is parsed entirely
+          on your device and the entries are written to the Extension's own local
+          storage. The Extension does not access your browser's native bookmarks.
         </p>
 
         <h2>3. Where the data is stored</h2>
@@ -161,7 +160,6 @@
         </p>
         <ul>
           <li><strong><code>storage</code></strong> — Used to persist the user's bookmarks, workspaces, collections, tags and UI preferences between browser sessions.</li>
-          <li><strong><code>bookmarks</code></strong> — Used only when the user clicks the Import button, to read existing Chrome bookmarks via <code>chrome.bookmarks.getTree()</code>. The Extension never writes to or modifies the native Chrome bookmarks.</li>
           <li><strong><code>contextMenus</code></strong> — Used to register the right-click "Save to Marks" item on pages and links.</li>
           <li><strong><code>activeTab</code></strong> — Used by the toolbar popup to read the URL, title and favicon of the tab the user is currently on, so the popup can pre-fill the bookmark form. No other tab is ever accessed.</li>
         </ul>
