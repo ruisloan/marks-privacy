@@ -1,0 +1,7 @@
+{
+  "id": "copy-note-text",
+  "name": "Copy Note Text",
+  "author": "Central Brain Trust",
+  "description": "Copia automaticamente todo o texto da nota a partir de um ícone na barra de ações.",
+  "repo": "REPLACE_WITH/your-repo"
+}
