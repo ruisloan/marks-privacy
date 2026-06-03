@@ -1,0 +1,10 @@
+{
+  "id": "copy-note-text",
+  "name": "Copy Note Text",
+  "version": "1.0.0",
+  "minAppVersion": "0.15.0",
+  "description": "Adiciona um ícone de copiar na barra de ações da nota que copia automaticamente todo o texto da nota para a área de transferência.",
+  "author": "Central Brain Trust",
+  "authorUrl": "https://www.centralbraintrust.com",
+  "isDesktopOnly": false
+}

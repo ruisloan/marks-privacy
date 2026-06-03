@@ -1,0 +1,20 @@
+{
+  "name": "obsidian-copy-note-text",
+  "version": "1.0.0",
+  "description": "Adiciona um ícone de copiar na barra de ações da nota que copia automaticamente todo o texto da nota.",
+  "main": "main.js",
+  "scripts": {
+    "dev": "node esbuild.config.mjs",
+    "build": "tsc -noEmit -skipLibCheck && node esbuild.config.mjs production"
+  },
+  "keywords": ["obsidian", "plugin", "copy", "clipboard"],
+  "author": "Central Brain Trust",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "builtin-modules": "^3.3.0",
+    "esbuild": "^0.21.0",
+    "obsidian": "latest",
+    "typescript": "^5.4.0"
+  }
+}
