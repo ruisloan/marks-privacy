@@ -2,25 +2,24 @@
 
 /*
  * Copy Note Text — Obsidian plugin
- * Adiciona um ícone de "copiar" na barra de ações da nota (canto superior
- * direito, junto ao ícone de leitura e ao menu "..."). Ao clicar, copia
- * automaticamente todo o texto da nota para a área de transferência.
+ * Adds a "copy" icon to the note's action bar (top-right, next to the reading
+ * view and the more-options "..." menu). Clicking it instantly copies the
+ * note's entire text to the clipboard.
  *
- * Este ficheiro é o build em JavaScript puro (CommonJS), pronto a usar pelo
- * Obsidian sem necessidade de compilação. O código-fonte em TypeScript está
- * em main.ts.
+ * This file is the plain JavaScript build (CommonJS), ready to be used by
+ * Obsidian without any compilation. The TypeScript source is in main.ts.
  */
 
 const obsidian = require("obsidian");
 
-// Usamos o ícone "copy" nativo do Obsidian (lucide), com aspeto idêntico ao
-// dos restantes ícones da barra de ações.
+// We use Obsidian's native "copy" icon (lucide), so it looks identical to the
+// other icons in the action bar.
 const ICON_ID = "copy";
 const ACTION_FLAG = "__copyNoteActionAdded";
 
 class CopyNotePlugin extends obsidian.Plugin {
   async onload() {
-    // Adiciona o botão sempre que a vista ativa muda ou o layout é alterado.
+    // Add the button whenever the active view or the layout changes.
     this.registerEvent(
       this.app.workspace.on("active-leaf-change", () => this.addCopyButton())
     );
@@ -28,13 +27,13 @@ class CopyNotePlugin extends obsidian.Plugin {
       this.app.workspace.on("layout-change", () => this.addCopyButton())
     );
 
-    // Garante que o botão é adicionado às notas já abertas ao iniciar.
+    // Make sure the button is added to notes already open on startup.
     this.app.workspace.onLayoutReady(() => this.addCopyButton());
 
-    // Comando equivalente (pesquisável na paleta e atribuível a um atalho).
+    // Equivalent command (searchable in the palette and assignable to a hotkey).
     this.addCommand({
       id: "copy-entire-note",
-      name: "Copiar todo o texto da nota",
+      name: "Copy entire note text",
       checkCallback: (checking) => {
         const view = this.app.workspace.getActiveViewOfType(obsidian.MarkdownView);
         if (!view) return false;
@@ -44,32 +43,32 @@ class CopyNotePlugin extends obsidian.Plugin {
     });
   }
 
-  // Adiciona o ícone de copiar à vista Markdown ativa, evitando duplicados.
+  // Adds the copy icon to the active Markdown view, avoiding duplicates.
   addCopyButton() {
     const view = this.app.workspace.getActiveViewOfType(obsidian.MarkdownView);
     if (!view || view[ACTION_FLAG]) return;
 
-    view.addAction(ICON_ID, "Copiar todo o texto da nota", () =>
+    view.addAction(ICON_ID, "Copy entire note text", () =>
       this.copyNote(view)
     );
     view[ACTION_FLAG] = true;
   }
 
-  // Copia todo o conteúdo (markdown) da nota para a área de transferência.
+  // Copies the note's entire (markdown) content to the clipboard.
   async copyNote(view) {
     const content = view.getViewData();
 
     if (!content) {
-      new obsidian.Notice("A nota está vazia.");
+      new obsidian.Notice("The note is empty.");
       return;
     }
 
     try {
       await navigator.clipboard.writeText(content);
-      new obsidian.Notice("Nota copiada para a área de transferência ✓");
+      new obsidian.Notice("Note copied to clipboard ✓");
     } catch (err) {
-      console.error("Copy Note Text: falha ao copiar", err);
-      new obsidian.Notice("Não foi possível copiar a nota.");
+      console.error("Copy Note Text: failed to copy", err);
+      new obsidian.Notice("Could not copy the note.");
     }
   }
 }
