@@ -9,20 +9,29 @@ import { App, Menu, MenuItem, Modal, Plugin, TAbstractFile } from "obsidian";
  */
 
 // 12-color palette inspired by Google Calendar.
-const COLORS: { name: string; value: string }[] = [
-  { name: "Tomato", value: "#D50000" },
-  { name: "Cherry", value: "#D81B60" },
-  { name: "Flamingo", value: "#E67C73" },
-  { name: "Tangerine", value: "#F4511E" },
-  { name: "Banana", value: "#F6BF26" },
-  { name: "Sage", value: "#33B679" },
-  { name: "Basil", value: "#0B8043" },
-  { name: "Peacock", value: "#039BE5" },
-  { name: "Blueberry", value: "#3F51B5" },
-  { name: "Lavender", value: "#7986CB" },
-  { name: "Grape", value: "#8E24AA" },
-  { name: "Graphite", value: "#616161" },
+// Each color has an emoji: native OS menus (macOS) only render text/emoji,
+// so the emoji doubles as the color swatch in the context menu.
+const COLORS: { name: string; value: string; emoji: string }[] = [
+  { name: "Tomato", value: "#D50000", emoji: "🍅" },
+  { name: "Cherry", value: "#D81B60", emoji: "🍒" },
+  { name: "Flamingo", value: "#E67C73", emoji: "🦩" },
+  { name: "Tangerine", value: "#F4511E", emoji: "🍊" },
+  { name: "Banana", value: "#F6BF26", emoji: "🍌" },
+  { name: "Sage", value: "#33B679", emoji: "🌿" },
+  { name: "Basil", value: "#0B8043", emoji: "🌱" },
+  { name: "Peacock", value: "#039BE5", emoji: "🦚" },
+  { name: "Blueberry", value: "#3F51B5", emoji: "🫐" },
+  { name: "Lavender", value: "#7986CB", emoji: "💜" },
+  { name: "Grape", value: "#8E24AA", emoji: "🍇" },
+  { name: "Graphite", value: "#616161", emoji: "⚫" },
 ];
+
+// "#D50000" -> "213,0,0" (for translucent pill backgrounds in CSS).
+function hexToRgb(hex: string): string {
+  const m = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+  if (!m) return "128,128,128";
+  return `${parseInt(m[1], 16)},${parseInt(m[2], 16)},${parseInt(m[3], 16)}`;
+}
 
 const MARK_CLASS = "color-marker-item";
 
@@ -97,6 +106,7 @@ export default class ColorMarkerPlugin extends Plugin {
     document.querySelectorAll<HTMLElement>("." + MARK_CLASS).forEach((el) => {
       el.classList.remove(MARK_CLASS);
       el.style.removeProperty("--color-marker");
+      el.style.removeProperty("--color-marker-rgb");
     });
   }
 
@@ -105,13 +115,9 @@ export default class ColorMarkerPlugin extends Plugin {
     const current = this.colors[file.path];
     for (const c of COLORS) {
       menu.addItem((item: MenuItem) => {
-        const frag = document.createDocumentFragment();
-        const dot = document.createElement("span");
-        dot.className = "color-marker-swatch";
-        dot.style.backgroundColor = c.value;
-        frag.appendChild(dot);
-        frag.appendChild(document.createTextNode(c.name));
-        item.setTitle(frag).onClick(() => void this.setColor(file.path, c.value));
+        item
+          .setTitle(`${c.emoji} ${c.name}`)
+          .onClick(() => void this.setColor(file.path, c.value));
         item.setChecked(current === c.value);
       });
     }
@@ -168,11 +174,13 @@ export default class ColorMarkerPlugin extends Plugin {
         if (color) {
           if (el.style.getPropertyValue("--color-marker") !== color) {
             el.style.setProperty("--color-marker", color);
+            el.style.setProperty("--color-marker-rgb", hexToRgb(color));
           }
           el.classList.add(MARK_CLASS);
         } else if (el.classList.contains(MARK_CLASS)) {
           el.classList.remove(MARK_CLASS);
           el.style.removeProperty("--color-marker");
+          el.style.removeProperty("--color-marker-rgb");
         }
       });
     }
