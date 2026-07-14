@@ -1,0 +1,58 @@
+/* Color Marker — styles */
+
+/* Tint the item's name in the file explorer. */
+.nav-file-title.color-marker-item,
+.nav-folder-title.color-marker-item {
+  color: var(--color-marker);
+}
+
+/* Colored dot before the item's name, calendar-label style. */
+.color-marker-item .nav-file-title-content::before,
+.color-marker-item .nav-folder-title-content::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--color-marker);
+  margin-right: 6px;
+  vertical-align: baseline;
+}
+
+/* Swatch shown next to each color name in the submenu. */
+.color-marker-swatch {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 8px;
+  vertical-align: middle;
+  border: 1px solid var(--background-modifier-border);
+}
+
+/* Fallback modal: 12-swatch grid. */
+.color-marker-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+  margin: 12px 0 16px;
+}
+
+.color-marker-cell {
+  width: 100%;
+  aspect-ratio: 1;
+  min-height: 34px;
+  border-radius: 50%;
+  border: 2px solid var(--background-modifier-border);
+  cursor: pointer;
+  padding: 0;
+}
+
+.color-marker-cell:hover {
+  transform: scale(1.12);
+  border-color: var(--text-normal);
+}
+
+.color-marker-remove {
+  width: 100%;
+}
