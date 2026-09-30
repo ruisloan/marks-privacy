@@ -1,207 +1,90 @@
 <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Privacy Policy — Marks</title>
-    <meta name="description" content="Marks does not collect, store, or transmit any personal data to remote servers. Everything stays on your device." />
-    <meta name="robots" content="index,follow" />
-    <link rel="canonical" href="https://marks.centralbraintrust.com/privacy" />
-    <style>
-      :root {
-        --bg: #0a0c12;
-        --fg: #f8fafc;
-        --muted: #94a3b8;
-        --accent: #34d399;
-        --link: #93c5fd;
-        --card: rgba(255,255,255,0.04);
-        --border: rgba(255,255,255,0.08);
-        --code: rgba(52,211,153,0.15);
-      }
-      @media (prefers-color-scheme: light) {
-        :root {
-          --bg: #f8fafc;
-          --fg: #0f172a;
-          --muted: #475569;
-          --accent: #047857;
-          --link: #2563eb;
-          --card: rgba(255,255,255,0.7);
-          --border: rgba(0,0,0,0.08);
-          --code: rgba(4,120,87,0.12);
-        }
-      }
-      * { box-sizing: border-box; }
-      html, body { margin: 0; padding: 0; background: var(--bg); color: var(--fg);
-        font-family: -apple-system, "SF Pro Text", "Inter", system-ui, sans-serif;
-        line-height: 1.6; }
-      body {
-        background-image:
-          radial-gradient(at 0% 0%, rgba(91,157,255,0.18) 0px, transparent 50%),
-          radial-gradient(at 100% 0%, rgba(168,85,247,0.15) 0px, transparent 50%),
-          radial-gradient(at 50% 100%, rgba(236,72,153,0.12) 0px, transparent 50%);
-        background-attachment: fixed;
-        min-height: 100vh;
-      }
-      .container { max-width: 720px; margin: 0 auto; padding: 48px 24px; }
-      header { display: flex; justify-content: space-between; align-items: center;
-        margin-bottom: 56px; }
-      .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--fg); }
-      .brand-logo {
-        width: 36px; height: 36px; border-radius: 10px;
-        background: linear-gradient(135deg, #5b9dff 0%, #a855f7 50%, #ec4899 100%);
-        display: flex; align-items: center; justify-content: center;
-        box-shadow: 0 4px 12px rgba(168,85,247,0.3);
-      }
-      .brand-logo svg { width: 18px; height: 18px; fill: #fff; }
-      .brand-name { font-weight: 800; font-size: 17px; letter-spacing: -0.3px; }
-      .back { color: var(--muted); text-decoration: none; font-size: 13px; }
-      .back:hover { color: var(--fg); }
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacidade — mévoire</title>
+<meta name="description" content="Política de privacidade da extensão e do site mévoire.">
+<style>
+:root{color-scheme:light dark}
+body{margin:0;background:#fff;color:#121212;font:16px/1.65 -apple-system,system-ui,"Segoe UI",sans-serif}
+@media (prefers-color-scheme:dark){body{background:#121212;color:#f5f5f5}a{color:#f5f5f5}.muted{color:#a3a3a3}hr{border-color:#333}}
+main{max-width:680px;margin:0 auto;padding:56px 24px 80px}
+h1{font-size:34px;letter-spacing:-.6px;margin:32px 0 8px}
+h2{font-size:20px;letter-spacing:-.3px;margin:36px 0 10px}
+p,li{margin:0 0 12px}
+ul{padding-left:20px}
+.muted{color:#666}
+.brand{font-weight:700;letter-spacing:-.4px;text-decoration:none;color:inherit;font-size:22px}
+hr{border:0;border-top:1px solid #e5e5e5;margin:48px 0}
+a{color:inherit}
+</style>
+</head>
+<body>
+<main>
+<a class="brand" href="https://mevoire.com/">mévoire</a>
+<h1>Privacidade</h1>
+<p class="muted">Última actualização: 30 de Setembro de 2026. Aplica-se à extensão «mévoire» para Chrome e ao site mevoire.com. Versão em inglês abaixo.</p>
 
-      .badge {
-        display: inline-flex; align-items: center; gap: 6px;
-        padding: 6px 12px;
-        background: var(--code);
-        color: var(--accent);
-        border-radius: 999px;
-        font-size: 11px; font-weight: 700;
-        text-transform: uppercase; letter-spacing: 1.2px;
-        margin-bottom: 18px;
-      }
-      h1 { font-size: clamp(28px, 5vw, 42px); line-height: 1.15;
-        margin: 0 0 8px; letter-spacing: -1.2px; font-weight: 800; }
-      .updated { color: var(--muted); font-size: 13px; margin-bottom: 40px; }
+<h2>1. Em resumo</h2>
+<ul>
+<li>A extensão não guarda dados nem contacta servidores próprios. Serve para capturar a página em que estás e entregá-la ao site mevoire.com, no teu browser.</li>
+<li>A tua biblioteca fica no teu dispositivo, no armazenamento do browser. Só é copiada para a nuvem se criares conta e iniciares sessão.</li>
+<li>Não há analítica, publicidade, rastreamento nem código remoto.</li>
+</ul>
 
-      h2 { font-size: 19px; font-weight: 700; margin: 36px 0 12px;
-        letter-spacing: -0.3px; }
-      p { font-size: 15px; color: var(--fg); }
-      p, li { opacity: 0.85; }
-      ul { padding-left: 22px; }
-      li { margin-bottom: 6px; font-size: 15px; }
-      strong { color: var(--fg); opacity: 1; }
-      code { background: var(--code); color: var(--accent);
-        padding: 1px 6px; border-radius: 4px; font-size: 13px;
-        font-family: ui-monospace, "SF Mono", Menlo, monospace; }
-      a { color: var(--link); }
+<h2>2. O que a extensão lê</h2>
+<p>Só quando carregas no botão, no atalho de teclado ou no menu de contexto: o endereço e o título da página, o texto que seleccionaste e, para artigos, o texto principal da página e a sua descrição (meta description), extraídos localmente. Esses dados são entregues à janela de captura em mevoire.com e nada é guardado na extensão.</p>
 
-      footer {
-        margin-top: 64px;
-        padding-top: 24px;
-        border-top: 1px solid var(--border);
-        text-align: center;
-        color: var(--muted);
-        font-size: 12px;
-      }
-      footer a { color: var(--muted); text-decoration: underline; text-underline-offset: 2px; }
-      footer a:hover { color: var(--fg); }
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <header>
-        <a class="brand" href="https://marks.centralbraintrust.com">
-          <span class="brand-logo">
-            <svg viewBox="0 0 24 24"><path d="M6 4h12c1.1 0 2 .9 2 2v14l-8-4-8 4V6c0-1.1.9-2 2-2z"/></svg>
-          </span>
-          <span class="brand-name">Marks</span>
-        </a>
-        <a class="back" href="https://marks.centralbraintrust.com">← Back home</a>
-      </header>
+<h2>3. Autorizações pedidas</h2>
+<ul>
+<li><strong>activeTab</strong> e <strong>scripting</strong> — ler título, endereço, descrição e texto do artigo da página onde carregaste, e só dessa.</li>
+<li><strong>contextMenus</strong> — o item «Guardar na mévoire» no botão direito.</li>
+<li><strong>Acesso a https://mevoire.com/*</strong> — abrir a janela de captura e entregar-lhe a página capturada.</li>
+<li><strong>storage</strong> e <strong>unlimitedStorage</strong> — herdadas da versão anterior (Marks), em que a biblioteca vivia na extensão; hoje servem apenas para consultar e exportar essa biblioteca antiga a partir da página de boas-vindas.</li>
+</ul>
 
-      <main>
-        <div class="badge">✓ Privacy Policy</div>
-        <h1>We never collect your data.</h1>
-        <p class="updated">Last updated: 20 May 2026</p>
+<h2>4. O site mevoire.com</h2>
+<p>Sem conta, tudo o que guardas fica no armazenamento local do browser (e na cache da aplicação para funcionar sem internet). Com conta, a biblioteca é sincronizada com a nossa base de dados alojada na Supabase, região União Europeia (Irlanda), protegida por regras de acesso que só deixam cada utilizador ler os seus próprios dados. A conta usa email e palavra-passe, ou um código enviado por email. Podes exportar tudo em JSON ou Markdown a qualquer momento e apagar a conta pedindo-o por email.</p>
 
-        <p>
-          Marks (the "Extension") is a Chrome browser extension that replaces the
-          default new-tab page with a personal bookmarks dashboard. This Privacy
-          Policy describes — in plain English — what data the Extension touches,
-          where it lives, and who can see it.
-        </p>
+<h2>5. Terceiros</h2>
+<p>Nenhum serviço de terceiros recebe os teus dados, além do alojamento da base de dados (Supabase) quando escolhes sincronizar, e do envio dos emails de acesso à conta.</p>
 
-        <h2>1. Summary</h2>
-        <ul>
-          <li>The Extension does <strong>not</strong> contact any remote server.</li>
-          <li>The Extension does <strong>not</strong> collect analytics, telemetry, crash reports, or any usage data.</li>
-          <li>All bookmarks, workspaces, collections and tags you create are stored locally on your device in <code>chrome.storage.local</code>.</li>
-          <li>No third parties receive any of your information through the Extension.</li>
-          <li>There are no accounts, no sign-up, no login.</li>
-        </ul>
+<h2>6. Crianças</h2>
+<p>A mévoire é uma ferramenta de produtividade de uso geral e não se destina a menores de 13 anos.</p>
 
-        <h2>2. What data the Extension handles</h2>
-        <p>
-          The Extension lets you save and organize the URLs, page titles, descriptions
-          and tags you choose. This data is created and read entirely on your device.
-          Specifically:
-        </p>
-        <ul>
-          <li><strong>URLs and titles</strong> you save (manually or via the toolbar popup, context menu or keyboard shortcut).</li>
-          <li><strong>Tags, descriptions, collections and workspace names</strong> you create.</li>
-          <li><strong>UI preferences</strong> (selected theme, active workspace).</li>
-        </ul>
-        <p>
-          To bring in bookmarks you already have, export them from any browser as an
-          HTML file and drop that file into the Extension. The file is parsed entirely
-          on your device and the entries are written to the Extension's own local
-          storage. The Extension does not access your browser's native bookmarks.
-        </p>
+<h2>7. Alterações e contacto</h2>
+<p>Se a forma como tratamos os dados mudar, esta página é actualizada e a extensão publica uma nova versão com nota de alterações. Questões: <a href="mailto:rui@2bepro.com">rui@2bepro.com</a>.</p>
 
-        <h2>3. Where the data is stored</h2>
-        <p>
-          Exclusively on your device, inside the browser profile, via the standard
-          Chrome Extension storage API (<code>chrome.storage.local</code>).
-          Uninstalling the Extension wipes that data automatically.
-        </p>
+<hr>
 
-        <h2>4. Permissions</h2>
-        <p>
-          Chrome shows the user a list of permissions on install. Here is exactly
-          why each one is requested:
-        </p>
-        <ul>
-          <li><strong><code>storage</code></strong> — Used to persist the user's bookmarks, workspaces, collections, tags and UI preferences between browser sessions.</li>
-          <li><strong><code>contextMenus</code></strong> — Used to register the right-click "Save to Marks" item on pages and links.</li>
-          <li><strong><code>activeTab</code></strong> — Used by the toolbar popup to read the URL, title and favicon of the tab the user is currently on, so the popup can pre-fill the bookmark form. No other tab is ever accessed.</li>
-        </ul>
-
-        <h2>5. Third parties</h2>
-        <p>
-          None. The Extension contacts no remote endpoints, embeds no analytics or
-          advertising libraries, and ships no remote code. Page favicons displayed in
-          the dashboard are loaded from Google's public favicon service
-          (<code>www.google.com/s2/favicons</code>) using only the host name of each
-          saved bookmark — same behavior that Chrome itself uses to render favicons.
-        </p>
-
-        <h2>6. Children's privacy</h2>
-        <p>
-          The Extension is a general-purpose productivity tool. It is not directed at
-          children under 13. We do not knowingly collect personal information from
-          anyone — including children.
-        </p>
-
-        <h2>7. Changes to this policy</h2>
-        <p>
-          If we ever change how Marks handles data, this page will be updated and a
-          new version of the Extension will be published in the Chrome Web Store with
-          a clear changelog entry. Material changes will be flagged in the Extension
-          on first launch.
-        </p>
-
-        <h2>8. Contact</h2>
-        <p>
-          Marks is created exclusively for and offered by
-          <a href="https://www.centralbraintrust.com">Central Brain Trust</a>.
-          Privacy or security questions:
-          <a href="mailto:privacy@centralbraintrust.com">privacy@centralbraintrust.com</a>.
-        </p>
-      </main>
-
-      <footer>
-        <a href="https://www.centralbraintrust.com" target="_blank" rel="noreferrer">
-          Created exclusively for and offered by Central Brain Trust ↗
-        </a>
-      </footer>
-    </div>
-  </body>
+<h1 lang="en">Privacy</h1>
+<p class="muted" lang="en">Last updated 30 September 2026. Covers the “mévoire” Chrome extension and the mevoire.com site.</p>
+<div lang="en">
+<h2>1. In short</h2>
+<ul>
+<li>The extension stores no data and contacts no servers of its own. It captures the page you are on and hands it to mevoire.com, inside your browser.</li>
+<li>Your library lives on your device, in browser storage. It is only copied to the cloud if you create an account and sign in.</li>
+<li>No analytics, no ads, no tracking, no remote code.</li>
+</ul>
+<h2>2. What the extension reads</h2>
+<p>Only when you click the button, press the shortcut or use the context menu: the page address and title, the text you selected and, for articles, the page’s main text and meta description, extracted locally. That data is handed to the capture window on mevoire.com; nothing is kept in the extension.</p>
+<h2>3. Permissions</h2>
+<ul>
+<li><strong>activeTab</strong> and <strong>scripting</strong> — read the title, address, description and article text of the page you clicked on, and only that one.</li>
+<li><strong>contextMenus</strong> — the “Save to mévoire” right-click item.</li>
+<li><strong>Access to https://mevoire.com/*</strong> — open the capture window and hand it the captured page.</li>
+<li><strong>storage</strong> and <strong>unlimitedStorage</strong> — inherited from the previous version (Marks), when the library lived inside the extension; today they only let you view and export that legacy library from the welcome page.</li>
+</ul>
+<h2>4. The mevoire.com site</h2>
+<p>Without an account, everything you save stays in the browser’s local storage (plus the app cache for offline use). With an account, the library syncs to our database hosted on Supabase in the European Union (Ireland), guarded by access rules that only let each user read their own data. Accounts use email and password, or an emailed code. You can export everything as JSON or Markdown at any time and delete the account by email request.</p>
+<h2>5. Third parties</h2>
+<p>No third-party service receives your data, apart from the database host (Supabase) when you choose to sync, and the delivery of account emails.</p>
+<h2>6. Children</h2>
+<p>mévoire is a general-purpose productivity tool and is not directed at children under 13.</p>
+<h2>7. Changes and contact</h2>
+<p>If the way we handle data changes, this page is updated and a new extension version is published with release notes. Questions: <a href="mailto:rui@2bepro.com">rui@2bepro.com</a>.</p>
+</div>
+</main>
+</body>
 </html>
